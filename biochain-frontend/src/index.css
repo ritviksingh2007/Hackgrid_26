@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --animate-blob: blob 7s infinite;
+  --keyframes-blob: {
+    "0%": { transform: "translate(0px, 0px) scale(1)" },
+    "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+    "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+    "100%": { transform: "translate(0px, 0px) scale(1)" }
+  };
+}
+
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up-fade {
+  animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.animate-text-shimmer {
+  animation: textShimmer 2.5s ease-out infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(245, 158, 11, 0.5), 0 0 10px rgba(245, 158, 11, 0.3); }
+  100% { text-shadow: 0 0 10px rgba(245, 158, 11, 0.7), 0 0 20px rgba(217, 119, 6, 0.5), 0 0 25px rgba(217, 119, 6, 0.3); }
+}
+.animate-glow {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-1000 { animation-delay: 1s; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-3000 { animation-delay: 3s; }
+
+.bg-size-200 {
+  background-size: 200% auto;
+}
+/* TradingPortal Theme Variables */
+:root {
+  --tp-gold: #059669;
+  --tp-gold-bright: #047857;
+  --tp-ink: #f5f5f4;
+  --tp-panel: #ffffff;
+  --tp-panel-raised: #f5f5f4;
+  --tp-olive: #059669;
+  --tp-parchment: #1c1917;
+  --tp-muted: #57534e;
+  --tp-input-bg: #ffffff;
+  --tp-border: rgba(0,0,0,0.1);
+  --tp-border-light: rgba(0,0,0,0.05);
+
+  --tp-tone-gold-bg: rgba(5,150,105,0.1);
+  --tp-tone-gold-color: #047857;
+  --tp-tone-gold-border: rgba(5,150,105,0.2);
+
+  --tp-tone-olive-bg: rgba(5,150,105,0.1);
+  --tp-tone-olive-color: #047857;
+  --tp-tone-olive-border: rgba(5,150,105,0.2);
+
+  --tp-tone-green-bg: rgba(5,150,105,0.1);
+  --tp-tone-green-color: #047857;
+  --tp-tone-green-border: rgba(5,150,105,0.2);
+
+  --tp-tone-red-bg: rgba(220,38,38,0.1);
+  --tp-tone-red-color: #b91c1c;
+  --tp-tone-red-border: rgba(220,38,38,0.2);
+
+  --tp-pill-gold-bg: rgba(5,150,105,0.1);
+  --tp-pill-gold-color: #047857;
+  --tp-pill-gold-border: rgba(5,150,105,0.2);
+
+  --tp-pill-green-bg: rgba(5,150,105,0.1);
+  --tp-pill-green-color: #047857;
+  --tp-pill-green-border: rgba(5,150,105,0.2);
+
+  --tp-pill-olive-bg: rgba(5,150,105,0.1);
+  --tp-pill-olive-color: #047857;
+  --tp-pill-olive-border: rgba(5,150,105,0.2);
+
+  --tp-pill-red-bg: rgba(220,38,38,0.1);
+  --tp-pill-red-color: #b91c1c;
+  --tp-pill-red-border: rgba(220,38,38,0.2);
+}
+
+.dark {
+  --tp-gold: #d4aa57;
+  --tp-gold-bright: #f3cf7a;
+  --tp-ink: #121511;
+  --tp-panel: #1b2119;
+  --tp-panel-raised: #22291f;
+  --tp-olive: #889a6b;
+  --tp-parchment: #f4ecd9;
+  --tp-muted: #a7ad99;
+  --tp-input-bg: rgba(18,21,17,.88);
+  --tp-border: rgba(255,255,255,0.1);
+  --tp-border-light: rgba(255,255,255,0.04);
+
+  --tp-tone-gold-bg: rgba(212,170,87,.14);
+  --tp-tone-gold-color: #f3cf7a;
+  --tp-tone-gold-border: rgba(212,170,87,.28);
+
+  --tp-tone-olive-bg: rgba(136,154,107,.16);
+  --tp-tone-olive-color: #cbdbb0;
+  --tp-tone-olive-border: rgba(136,154,107,.3);
+
+  --tp-tone-green-bg: rgba(100,157,103,.16);
+  --tp-tone-green-color: #b9e2b5;
+  --tp-tone-green-border: rgba(100,157,103,.3);
+
+  --tp-tone-red-bg: rgba(213,131,101,.16);
+  --tp-tone-red-color: #f1ad97;
+  --tp-tone-red-border: rgba(213,131,101,.3);
+
+  --tp-pill-gold-bg: rgba(212,170,87,.13);
+  --tp-pill-gold-color: #e7c879;
+  --tp-pill-gold-border: rgba(212,170,87,.22);
+
+  --tp-pill-green-bg: rgba(100,157,103,.14);
+  --tp-pill-green-color: #add4a8;
+  --tp-pill-green-border: rgba(100,157,103,.25);
+
+  --tp-pill-olive-bg: rgba(136,154,107,.14);
+  --tp-pill-olive-color: #c0cb9d;
+  --tp-pill-olive-border: rgba(136,154,107,.23);
+
+  --tp-pill-red-bg: rgba(213,131,101,.14);
+  --tp-pill-red-color: #eaa38e;
+  --tp-pill-red-border: rgba(213,131,101,.25);
+}
